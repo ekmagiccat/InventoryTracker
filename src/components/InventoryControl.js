@@ -1,23 +1,22 @@
 import React from "react";
-import NewTicketForm from "./NewTicketForm";
-import TicketList from "./TicketList";
-import TicketDetail from "./TicketDetail";
+import Inventory from "./Inventory";
+import BoxDetail from "./BoxDetail";
 
-class TicketControl extends React.Component {
+class InventoryControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainTicketList: [],
-      selectedTicket: null,
+      mainInventoryList: [],
+      selectedBox: null,
     };
   }
 
   handleClick = () => {
-    if (this.state.selectedTicket != null) {
+    if (this.state.selectedBox != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedTicket: null,
+        selectedBox: null,
       });
     } else {
       this.setState((prevState) => ({
@@ -26,27 +25,27 @@ class TicketControl extends React.Component {
     }
   };
 
-  handleAddingNewTicketToList = (newTicket) => {
-    const newMainTicketList = this.state.mainTicketList.concat(newTicket);
+  handleAddingNewBoxToList = (newBox) => {
+    const newMainInventoryList = this.state.mainInventoryList.concat(newBox);
     this.setState({
-      mainTicketList: newMainTicketList,
+      mainInventoryList: newMainInventoryList,
       formVisibleOnPage: false,
     });
   };
-  handleChangingSelectedTicket = (id) => {
-    const selectedTicket = this.state.mainTicketList.filter(
-      (ticket) => ticket.id === id
+  handleChangingSelectedBox = (id) => {
+    const selectedBox = this.state.mainInventoryList.filter(
+      (box) => box.id === id
     )[0];
-    this.setState({ selectedTicket: selectedTicket });
+    this.setState({ selectedBox: selectedBox });
   };
 
-  handleDeletingTicket = (id) => {
-    const newMainTicketList = this.state.mainTicketList.filter(
-      (ticket) => ticket.id !== id
+  handleDeletingBox = (id) => {
+    const newMainInventoryList = this.state.mainInventoryList.filter(
+      (box) => box.id !== id
     );
     this.setState({
-      mainTicketList: newMainTicketList,
-      selectedTicket: null,
+      mainInventoryList: newMainInventoryList,
+      selectedBox: null,
     });
   };
 
@@ -54,36 +53,35 @@ class TicketControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedTicket != null) {
+    if (this.state.selectedBox != null) {
       currentlyVisibleState = (
-        <TicketDetail
-          ticket={this.state.selectedTicket}
-          onClickingDelete={this.handleDeletingTicket}
+        <BoxDetail
+          box={this.state.selectedBox}
+          onClickingDelete={this.handleDeletingBox}
         />
       );
-      buttonText = "Return to Ticket List";
+      buttonText = "Return to Inventory List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
-        <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList} />
+        <NewBoxForm onNewBoxCreation={this.handleAddingNewBoxToList} />
       );
-      buttonText = "Return to Ticket List";
+      buttonText = "Return to Inventory List";
     } else {
       currentlyVisibleState = (
-        <TicketList
-          ticketList={this.state.mainTicketList}
-          onTicketSelection={this.handleChangingSelectedTicket}
+        <Inventory
+          inventoryList={this.state.mainInventoryList}
+          onBoxSelection={this.handleChangingSelectedBox}
         />
       );
-      buttonText = "Add Ticket";
+      buttonText = "Add Box to Inventory";
     }
 
     return (
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>{" "}
-        {/* new code */}
       </React.Fragment>
     );
   }
 }
-export default TicketControl;
+export default InventoryControl;

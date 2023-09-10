@@ -8,7 +8,7 @@ function NewBoxForm(props) {
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={handleNewBoxFormSubmission}
-        buttonText="Help!"
+        buttonText="Add box"
       />
     </React.Fragment>
   );

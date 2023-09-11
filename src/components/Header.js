@@ -3,10 +3,11 @@ import passionfruitImage from "./../img/passionfruit.jpeg";
 
 function Header() {
   const HeaderStyles = {
-    backgroundColor: "#fff",
+    backgroundColor: "#cbcfff",
     fontFamily: "sans-serif",
     paddingTop: "50px",
     textAlign: "center",
+    fontSize: "30px",
   };
   return (
     <React.Fragment>

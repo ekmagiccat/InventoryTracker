@@ -1,3 +1,7 @@
+body {
+  margin: auto;
+  padding-bottom: 40px;
+}
 button {
   background-color: #eef497;
   color: #000;
@@ -7,4 +11,9 @@ button {
   border-radius: 20px;
   font-size: 20px;
   text-align: center;
+}
+
+button:hover {
+  background-color: #4caf50;
+  color: white;
 }

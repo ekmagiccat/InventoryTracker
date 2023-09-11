@@ -20,7 +20,7 @@ function Box(props) {
 Box.propTypes = {
   color: PropTypes.string,
   origin: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
   id: PropTypes.string,
   whenBoxClicked: PropTypes.func,
 };

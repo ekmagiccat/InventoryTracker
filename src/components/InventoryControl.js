@@ -57,12 +57,21 @@ class InventoryControl extends React.Component {
   };
 
   handleAddingNewBoxToList = (newBox) => {
+    if (
+      newBox.color.trim() === "" ||
+      newBox.origin.trim() === "" ||
+      newBox.price.trim() === ""
+    ) {
+      this.setState({ errorMessage: "Please fill in all fields" });
+      return;
+    }
     const newMainInventoryList = this.state.mainInventoryList.concat(newBox);
     this.setState({
       mainInventoryList: newMainInventoryList,
       formVisibleOnPage: false,
     });
   };
+
   handleChangingSelectedBox = (id) => {
     const selectedBox = this.state.mainInventoryList.filter(
       (box) => box.id === id

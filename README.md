@@ -4,7 +4,11 @@
 
 ## Description
 
-An application that tracks boxes of lilikoi(passion fruit) inventory. A user can add, edit, view, and delete boxes from the inventory list.
+A React web application that tracks boxes of lilikoi(passion fruit) inventory. A user can add, edit, view, and delete boxes from the inventory list.
+
+## Component Tree
+
+![Component Tree](InventoryComponents.drawio.png "a title")
 
 ## Technologies Used
 
@@ -38,5 +42,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 Your app is ready to be deployed!
-
-

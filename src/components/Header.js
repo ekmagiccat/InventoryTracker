@@ -3,7 +3,7 @@ import passionfruitImage from "./../img/passionfruit.jpeg";
 
 function Header() {
   const HeaderStyles = {
-    backgroundColor: "#000000",
+    backgroundColor: "#fff",
     fontFamily: "sans-serif",
     paddingTop: "50px",
     textAlign: "center",

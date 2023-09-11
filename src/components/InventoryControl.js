@@ -1,5 +1,5 @@
 import React from "react";
-import Inventory from "./Inventory";
+import Inventory from "./InventoryList";
 import BoxDetail from "./BoxDetail";
 import NewBoxForm from "./NewBoxForm";
 import EditBoxForm from "./EditBoxForm";

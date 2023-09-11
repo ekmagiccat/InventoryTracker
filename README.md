@@ -8,7 +8,7 @@ A React web application that tracks boxes of lilikoi(passion fruit) inventory. A
 
 ## Component Tree
 
-![Component Tree](InventoryComponents.drawio.png "a title")
+![Component Tree](InventoryComponents.drawio.png)
 
 ## Technologies Used
 

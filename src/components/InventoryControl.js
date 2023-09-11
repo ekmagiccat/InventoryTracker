@@ -4,6 +4,7 @@ import BoxDetail from "./BoxDetail";
 import NewBoxForm from "./NewBoxForm";
 import EditBoxForm from "./EditBoxForm";
 
+
 class InventoryControl extends React.Component {
   constructor(props) {
     super(props);

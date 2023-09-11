@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./ReusableForm.css";
 
 function ReusableForm(props) {
   return (

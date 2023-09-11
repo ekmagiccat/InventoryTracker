@@ -8,10 +8,15 @@ function Header() {
     paddingTop: "50px",
     textAlign: "center",
   };
+  const imageStyle = {
+    innerWidth: "300"
+  };
   return (
     <React.Fragment>
       <div style={HeaderStyles}>
         <h1>Lily's Lilikoi</h1>
+      </div>
+      <div style={imageStyle}>
         <img src={passionfruitImage} alt="passionfruit or lilikoi" />
       </div>
     </React.Fragment>

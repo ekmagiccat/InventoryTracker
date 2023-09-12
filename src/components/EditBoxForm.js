@@ -11,6 +11,7 @@ function EditBoxForm(props) {
       color: event.target.color.value,
       origin: event.target.origin.value,
       price: event.target.price.value,
+      numberOfLilikoi: event.target.numberOfLilikoi.value,
       id: box.id,
     });
   }

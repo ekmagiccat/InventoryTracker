@@ -12,6 +12,7 @@ function InventoryList(props) {
           color={box.color}
           origin={box.origin}
           price={box.price}
+          numberOfLilikoi={box.numberOfLilikoi}
           id={box.id}
           key={box.id}
         />

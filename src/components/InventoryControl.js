@@ -30,6 +30,15 @@ class InventoryControl extends React.Component {
     }
   };
 
+  handleSellingBox = (id) => {
+    const newMainInventoryList = this.state.mainInventoryList.filter(
+      (box) => box.id !== id
+    );
+    this.setState({
+      mainInventoryList: newMainInventoryList,
+    });
+  };
+
   handleDeletingBox = (id) => {
     const newMainInventoryList = this.state.mainInventoryList.filter(
       (box) => box.id !== id

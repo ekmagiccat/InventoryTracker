@@ -11,7 +11,9 @@ function BoxDetail(props) {
         {box.color} - {box.origin}
       </h3>
       <p>
-        <em>{box.price}</em>
+        <em>
+          ${box.price} for {box.numberOfLilikoi} Lilikoi
+        </em>
       </p>
       <button onClick={onClickingEdit}>Update Box</button>
       <button onClick={() => onClickingDelete(box.id)}>Delete Box</button>

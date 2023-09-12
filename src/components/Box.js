@@ -9,7 +9,9 @@ function Box(props) {
           {props.color} - {props.origin}
         </h3>
         <p>
-          <em>{props.price}</em>
+          <em>
+            ${props.price} for {props.numberOfLilikoi} Lilikoi
+          </em>
         </p>
         <hr />
       </div>

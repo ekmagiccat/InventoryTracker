@@ -30,23 +30,24 @@ class InventoryControl extends React.Component {
     }
   };
 
-  // handleSellingBox = (id) => {
-  //   const newMainInventoryList = this.state.mainInventoryList.filter(
-  //     (box) => box.id !== id
-  //   );
-  //   this.setState({
-  //     mainInventoryList: newMainInventoryList,
-  //   });
-  // };
+  handleSellingBox = () => {
+    const selectedBox = this.state.selectedBox;
 
-  handleDeletingBox = (id) => {
-    const newMainInventoryList = this.state.mainInventoryList.filter(
-      (box) => box.id !== id
-    );
-    this.setState({
-      mainInventoryList: newMainInventoryList,
-      selectedBox: null,
-    });
+    if (selectedBox && selectedBox.numberOfLilikoi > 0) {
+      const lilikoiSold = this.state.mainInventoryList.find(
+        (box) => box.id === selectedBox.id
+      );
+
+      if (lilikoiSold) {
+        lilikoiSold.numberOfLilikoi--;
+        const editedMainInventoryList = this.state.mainInventoryList
+          .filter((box) => box.id !== selectedBox.id)
+          .concat(lilikoiSold);
+        this.setState({
+          mainInventoryList: editedMainInventoryList,
+        });
+      }
+    }
   };
 
   handleEditClick = () => {
@@ -88,6 +89,16 @@ class InventoryControl extends React.Component {
     this.setState({ selectedBox: selectedBox });
   };
 
+  handleDeletingBox = (id) => {
+    const newMainInventoryList = this.state.mainInventoryList.filter(
+      (box) => box.id !== id
+    );
+    this.setState({
+      mainInventoryList: newMainInventoryList,
+      selectedBox: null,
+    });
+  };
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -105,6 +116,7 @@ class InventoryControl extends React.Component {
           box={this.state.selectedBox}
           onClickingDelete={this.handleDeletingBox}
           onClickingEdit={this.handleEditClick}
+          onClickingSell={this.handleSellingBox}
         />
       );
       buttonText = "Return to Inventory List";

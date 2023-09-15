@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function BoxDetail(props) {
-  const { box, onClickingDelete, onClickingEdit } = props;
+  const { box, onClickingDelete, onClickingEdit, onClickingSell } = props;
 
   return (
     <React.Fragment>
@@ -15,6 +15,7 @@ function BoxDetail(props) {
           ${box.price} for {box.numberOfLilikoi} Lilikoi
         </em>
       </p>
+      <button onClick={onClickingSell}>Sell Lilikoi</button>
       <button onClick={onClickingEdit}>Update Box</button>
       <button onClick={() => onClickingDelete(box.id)}>Delete Box</button>
       <hr />
@@ -26,6 +27,7 @@ BoxDetail.propTypes = {
   box: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
+  onClickingSell: PropTypes.func,
 };
 
 export default BoxDetail;

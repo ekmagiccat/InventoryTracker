@@ -23,6 +23,7 @@ Box.propTypes = {
   color: PropTypes.string,
   origin: PropTypes.string,
   price: PropTypes.string,
+  numberOfLilikoi: PropTypes.string,
   id: PropTypes.string,
   whenBoxClicked: PropTypes.func,
 };

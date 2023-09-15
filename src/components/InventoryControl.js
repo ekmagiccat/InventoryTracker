@@ -3,7 +3,7 @@ import Inventory from "./InventoryList";
 import BoxDetail from "./BoxDetail";
 import NewBoxForm from "./NewBoxForm";
 import EditBoxForm from "./EditBoxForm";
-import "./InventoryControl.css";
+import "./css/InventoryControl.css";
 
 class InventoryControl extends React.Component {
   constructor(props) {
